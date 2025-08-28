@@ -1,0 +1,9 @@
+.background-section {
+  background-image: url('../assets/wallpaper1.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  /* Adicione padding ou height para que a seção tenha espaço para a imagem */
+  padding: 500px 0; /* Exemplo de padding */
+}
