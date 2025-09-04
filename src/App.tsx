@@ -1,87 +1,66 @@
-import './style/style.css'
+import './styles/global.css'
 // @ts-ignore
 import {BoxLine,Btn,Title} from '@ciure/oksnk-ui'
 import { useTheme } from './services/ThemeContext';
-import { useState } from 'react';
-
-import AboutSection from './components/About';
 import { NavBar } from './components/NavBar';
-import { Card, Container, Row,Col,Button,Image } from 'react-bootstrap';
-import Profile from './assets/profile.png'
+import {Container, Row,Col,} from 'react-bootstrap';
+
+import Home from './components/Home';
+import ServicesSection from './components/Service';
+import About from './components/About';
+import Skills from './components/Skills';
 
 function App() {
-
+   const {theme} = useTheme()
     //const {theme,toggleTheme} = useTheme();
     //const [count, setCount] = useState(0)
     //const Adds = ()=>{
       //  return setCount((prev)=> prev + 1)
     // };
 
-  return (
-    <>
-        
-          <div>
-      {/* Header fixo ou navbar */}
+  return ( 
+     <div className={theme == 'light' ? 'bg_light' : 'bg_dark' } >
       <header>
         <NavBar/>
       </header>
-
-      {/* Sessões da página */}
       <main>
         <section id="home" className="vh-100 ">
           <div className="container">
-            <Container>
-              <Row className="align-items-center">
-                {/* Coluna para o texto */}
-                <Col lg={6} className="order-lg-2 ">
-                  <h2>Carlos Iure Gordiano dos Santos</h2>
-                  <p>
-                   Olá sou desenvolvedor Front-End ;)
-                  </p>
-                </Col>
-
-                {/* Coluna para a imagem */}
-                <Col lg={6} className="order-lg-1 ">
-                  <Image src={Profile} fluid alt="Descrição da imagem" className='mt-4' />
-                </Col>
-              </Row>
-            </Container>
+           <Home/>
           </div>
         </section>
 
-        <section id="sobre" className="py-5 bg-light">
+        <section id="services" className='vh-100'>
           <div className="container">
-           <AboutSection/>
+           <ServicesSection/>
           </div>
         </section>
 
-        <section id="projetos" className="py-5">
+        <section id="skills" className="py-5 vh-110">
           <div className="container">
-            <div className='container background-section'>
-               <Container>
-                  <Row className="align-items-center">
-                    <Col >
-                    
-                    </Col>
-                  </Row>
-            </Container>
-          </div>
+          <Skills/>
           </div>
         </section>
 
-        <section id="contato" className="py-5 bg-dark text-light">
+        <section id="contact" className="vh-120" >
           <div className="container">
-         
+           <About/>
+          </div>
+        </section>
+
+        <section id="contato" className="vh-100" >
+          <div className="container">
+           
           </div>
         </section>
       </main>
 
       {/* Rodapé */}
-      <footer className="bg-dark text-center text-light py-3">
-        <p>&copy; 2025 Meu Nome. Todos os direitos reservados.</p>
+      <footer className={theme == 'light' ? ('bg-white text-center text-dark py-1') : ('bg-black text-center text-white h-100 py-1')}> 
+        <p>&copy; 2025 Ci Developer. Todos os direitos reservados.</p>
       </footer>
     </div>
-    </>
+
   )
 }
 

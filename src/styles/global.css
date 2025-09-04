@@ -1,0 +1,161 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+}
+
+.bg_dark {
+  background-color: #000000;
+  transition: 1s ease-in-out; 
+}
+
+.bg_light {
+  background-color: #fafafa;
+  transition: 1s;
+}
+
+.nav-link {
+  font-weight: 600;
+  transition: color 0.3s ease-in-out;
+  &:hover {
+    color: #0059FF;
+  }
+}
+
+.services-container {
+  border-radius: 15px; 
+  padding: 3rem 2rem;
+}
+
+.services-heading {
+  margin-bottom: 2rem;
+  color: #40a0ff; 
+}
+
+.border-custom-blue {
+  border-color: #0059FF !important;
+}
+
+.card_text {
+  &:hover{
+    transition: 1s;
+    box-shadow: 5px 3px 10px #0059FF;
+     transform: translateY(-15px);
+  }
+}
+.text-justify {
+  text-align: justify;
+}
+
+.glass-card {
+  position: relative;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  color: white;
+}
+
+.glass-card h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.glass-card p {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.liquid {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 153, 255, 0.6),
+    rgba(0, 153, 255, 0.2) 60%,
+    transparent 100%
+  );
+  filter: blur(40px);
+  opacity: 0.8;
+
+  /* 👇 controla a suavização entre posições */
+  transition: transform 2s ease-in-out;
+}
+
+/* movimento aleatório quando em stand-by */
+@keyframes floatLiquid {
+  0% {
+    background: radial-gradient(
+      circle at 30% 40%,
+      rgba(0, 153, 255, 0.5),
+      rgba(0, 153, 255, 0.15) 60%,
+      transparent 100%
+    );
+  }
+  50% {
+    background: radial-gradient(
+      circle at 70% 60%,
+      rgba(0, 153, 255, 0.6),
+      rgba(0, 153, 255, 0.2) 60%,
+      transparent 100%
+    );
+  }
+  100% {
+    background: radial-gradient(
+      circle at 40% 30%,
+      rgba(0, 153, 255, 0.5),
+      rgba(0, 153, 255, 0.15) 60%,
+      transparent 100%
+    );
+  }
+}
+
+/* conteúdo acima do efeito */
+.glass-card *:not(.liquid) {
+  position: relative;
+  z-index: 1;
+}
+
+.moved_box{
+  /* Adicione uma transição para suavizar a animação */
+  transition: box-shadow 1s ease-in-out;
+}
+
+.moved_box:hover {
+   box-shadow: 0px 0px 5px #0059FF;
+}
+
+.full-height-section {
+  min-height: 100vh; /* Garante 100% da altura da viewport */
+
+}
+
+.about-me-card {
+  max-width: 900px; /* Largura máxima para o Card, ajuste conforme necessário */
+  width: 100%; /* Garante que ocupe 100% da largura disponível até o max-width */
+}
+
+.image-box {
+  background-color: #000; /* Fundo preto */
+  border: 1px solid #0059FF; /* Borda azul */
+  padding: 2rem;
+  border-radius: 10px;
+  min-height: 200px; /* Altura para as imagens */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
